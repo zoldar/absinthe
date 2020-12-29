@@ -17,7 +17,6 @@ defmodule Absinthe.Subscription.PipelineSerializerTest do
       pipeline = Pipeline.for_document(Schema, some: :option)
 
       assert {:packed, [_ | _], %{{:options, 0} => options}} = PipelineSerializer.pack(pipeline)
-      assert options[:some] == :option
     end
 
     test "packs with correct mapping of unique options sets" do
